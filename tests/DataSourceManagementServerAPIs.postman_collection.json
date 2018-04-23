@@ -1,0 +1,1958 @@
+{
+	"variables": [],
+	"info": {
+		"name": "DataSourceManagementServerAPIs",
+		"_postman_id": "723c0d32-a194-2dde-13d9-b9597821cb9e",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "datasourcecontroller",
+			"description": "",
+			"item": [
+				{
+					"name": "注册脱敏源，目的源数据库连接信息",
+					"description": "",
+					"item": [
+						{
+							"name": "/datasource/create case001",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;",
+											"",
+											"var responseJSON;",
+											"try{",
+											"    responseJSON = JSON.parse(responseBody);",
+											"    tests[\"message is SUCCESS\"] = responseJSON.message == \"SUCCESS\";",
+											"    tests[\"data has resourceId\"]=responseJSON.data.resourceId?true:false;    tests[\"data has resourceId\"]=responseJSON.data.resourceId?true:false;",
+											"    tests[\"resourceId is string\"] = typeof(responseJSON.data.resourceId) == \"string\";",
+											"       ",
+											"    postman.setGlobalVariable(\"import_resourceId\", responseJSON.data.resourceId);   ",
+											"    }",
+											"",
+											"catch(e){",
+											"    ",
+											"}"
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/create",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"comment\": \"1111\",\r\n  \"databaseName\": \"tms\",\r\n  \"dbType\": \"mysql\",\r\n  \"ip\": \"10.0.10.156\",\r\n  \"password\": \"admin\",\r\n  \"port\": 3306,\r\n  \"sourceType\": \"import\",\r\n  \"temporary\": false,\r\n  \"username\": \"root\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/create case002",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;",
+											"",
+											"var responseJSON;",
+											"try{",
+											"    responseJSON = JSON.parse(responseBody);",
+											"    tests[\"message is SUCCESS\"] = responseJSON.message == \"SUCCESS\";",
+											"    tests[\"data has resourceId\"]=responseJSON.data.resourceId?true:false;",
+											"    tests[\"resourceId is string\"] = typeof(responseJSON.data.resourceId) == \"string\";",
+											"       ",
+											"    }",
+											"",
+											"catch(e){",
+											"    ",
+											"}"
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/create",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"comment\": \"1112\",\r\n  \"databaseName\": \"tms\",\r\n  \"dbType\": \"mysql\",\r\n  \"ip\": \"10.0.10.156\",\r\n  \"password\": \"admin\",\r\n  \"port\": 3306,\r\n  \"sourceType\": \"export\",\r\n  \"temporary\": false,\r\n  \"username\": \"root\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/create case003",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;",
+											"",
+											"var responseJSON;",
+											"try{",
+											"    responseJSON = JSON.parse(responseBody);",
+											"    tests[\"message is SUCCESS\"] = responseJSON.message == \"SUCCESS\";",
+											"    tests[\"data has resourceId\"]=responseJSON.data.resourceId?true:false;",
+											"    tests[\"resourceId is string\"] = typeof(responseJSON.data.resourceId) == \"string\";",
+											"       ",
+											"    }",
+											"",
+											"catch(e){",
+											"    ",
+											"}"
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/create",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"comment\": \"1113\",\r\n  \"databaseName\": \"tms\",\r\n  \"dbType\": \"mysql\",\r\n  \"ip\": \"10.0.10.156\",\r\n  \"password\": \"admin\",\r\n  \"port\": 3306,\r\n  \"sourceType\": \"export\",\r\n  \"temporary\": true,\r\n  \"username\": \"root\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/create case004",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;",
+											"",
+											"var responseJSON;",
+											"try{",
+											"    responseJSON = JSON.parse(responseBody);",
+											"    tests[\"message is SUCCESS\"] = responseJSON.message == \"SUCCESS\";",
+											"    tests[\"data has resourceId\"]=responseJSON.data.resourceId?true:false;",
+											"    tests[\"resourceId is string\"] = typeof(responseJSON.data.resourceId) == \"string\";",
+											"    ",
+											"    }",
+											"",
+											"catch(e){",
+											"    ",
+											"}"
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/create",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"comment\": \"1114\",\r\n  \"databaseName\": \"tms\",\r\n  \"dbType\": \"mysql\",\r\n  \"ip\": \"10.0.10.156\",\r\n  \"password\": \"admin\",\r\n  \"port\": 3306,\r\n  \"sourceType\": \"import\",\r\n  \"temporary\": true,\r\n  \"username\": \"root\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/create case005",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;",
+											"",
+											"var responseJSON;",
+											"try{",
+											"    responseJSON = JSON.parse(responseBody);",
+											"    tests[\"message is FAIL\"] = responseJSON.message == \"FAIL\";",
+											"    tests[\"has data\"]=responseJSON.data?true:false;",
+											"    tests[\"data is string\"] = typeof(responseJSON.data) == \"string\";",
+											"       ",
+											"    }",
+											"",
+											"catch(e){",
+											"    ",
+											"}"
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/create",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"comment\": \"1115\",\r\n  \"databaseName\": \"tms\",\r\n  \"dbType\": \"mysql\",\r\n  \"ip\": \"10.0.10.156\",\r\n  \"password\": \"admi\",\r\n  \"port\": 3306,\r\n  \"sourceType\": \"import\",\r\n  \"temporary\": true,\r\n  \"username\": \"root\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/create case006",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;",
+											"",
+											"var responseJSON;",
+											"try{",
+											"    responseJSON = JSON.parse(responseBody);",
+											"    tests[\"message is SUCCESS\"] = responseJSON.message == \"SUCCESS\";",
+											"    tests[\"data has resourceId\"]=responseJSON.data.resourceId?true:false;",
+											"    tests[\"resourceId is string\"] = typeof(responseJSON.data.resourceId) == \"string\";",
+											"       ",
+											"    }",
+											"",
+											"catch(e){",
+											"    ",
+											"}"
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/create",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"comment\": \"1111\",\r\n  \"databaseName\": \"tms\",\r\n  \"dbType\": \"mysql\",\r\n  \"ip\": \"10.0.10.156\",\r\n  \"password\": \"admin\",\r\n  \"port\": 3306,\r\n  \"sourceType\": \"import\",\r\n  \"temporary\": true,\r\n  \"username\": \"root\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/create case007",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;",
+											"",
+											"var responseJSON;",
+											"try{",
+											"    responseJSON = JSON.parse(responseBody);",
+											"    tests[\"message is SUCCESS\"] = responseJSON.message == \"SUCCESS\";",
+											"    tests[\"data has resourceId\"]=responseJSON.data.resourceId?true:false;",
+											"    tests[\"resourceId is string\"] = typeof(responseJSON.data.resourceId) == \"string\";",
+											"       ",
+											"    }",
+											"",
+											"catch(e){",
+											"    ",
+											"}"
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/create",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"comment\": \"1117\",\r\n  \"databaseName\": \"xe\",\r\n  \"dbType\": \"oracle\",\r\n  \"ip\": \"10.0.10.175\",\r\n  \"password\": \"oracle2017\",\r\n  \"port\": 49161,\r\n  \"sourceType\": \"import\",\r\n  \"temporary\": true,\r\n  \"username\": \"system\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/create case008",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;",
+											"",
+											"var responseJSON;",
+											"try{",
+											"    responseJSON = JSON.parse(responseBody);",
+											"    tests[\"message is FAIL\"] = responseJSON.message == \"FAIL\";",
+											"    tests[\"has data\"]=responseJSON.data?true:false;",
+											"    tests[\"data is string\"] = typeof(responseJSON.data) == \"string\";",
+											"       ",
+											"    }",
+											"",
+											"catch(e){",
+											"    ",
+											"}"
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/create",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"comment\": \"1118\",\r\n  \"databaseName\": \"xe\",\r\n  \"dbType\": \"oracle\",\r\n  \"ip\": \"10.0.10.175\",\r\n  \"password\": \"oracle201\",\r\n  \"port\": 49161,\r\n  \"sourceType\": \"import\",\r\n  \"temporary\": true,\r\n  \"username\": \"system\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/create case009",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;",
+											"",
+											"var responseJSON;",
+											"try{",
+											"    responseJSON = JSON.parse(responseBody);",
+											"    tests[\"message is SUCCESS\"] = responseJSON.message == \"SUCCESS\";",
+											"    tests[\"data has resourceId\"]=responseJSON.data.resourceId?true:false;",
+											"    tests[\"resourceId is string\"] = typeof(responseJSON.data.resourceId) == \"string\";",
+											"    ",
+											"    postman.setGlobalVariable(\"import_resourceId_table\", responseJSON.data.resourceId);     ",
+											"    }",
+											"",
+											"catch(e){",
+											"    ",
+											"}"
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/create",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"comment\": \"1119\",\r\n  \"databaseName\": \"test\",\r\n  \"dbType\": \"postgresql\",\r\n  \"ip\": \"10.0.0.235\",\r\n  \"password\": \"postgres\",\r\n  \"port\": 5432,\r\n  \"sourceType\": \"import\",\r\n  \"temporary\": false,\r\n  \"username\": \"postgres\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/create case010",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;",
+											"",
+											"var responseJSON;",
+											"try{",
+											"    responseJSON = JSON.parse(responseBody);",
+											"    tests[\"message is FAIL\"] = responseJSON.message == \"FAIL\";",
+											"    tests[\"has data\"]=responseJSON.data?true:false;",
+											"    tests[\"data is string\"] = typeof(responseJSON.data) == \"string\";",
+											"       ",
+											"    }",
+											"",
+											"catch(e){",
+											"    ",
+											"}"
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/create",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"comment\": \"1120\",\r\n  \"databaseName\": \"test\",\r\n  \"dbType\": \"postgresq\",\r\n  \"ip\": \"10.0.0.235\",\r\n  \"password\": \"postgres\",\r\n  \"port\": 5432,\r\n  \"sourceType\": \"import\",\r\n  \"temporary\": true,\r\n  \"username\": \"postgres\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "测试目的源的名是否存在",
+					"description": "",
+					"item": [
+						{
+							"name": "/datasource/test/target case001",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"message is SUCCESS\"] = responseJSON.message == \"SUCCESS\";\r",
+											"\r",
+											"    }\r",
+											"\r",
+											"catch(e){\r",
+											"    \r",
+											"}\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/test/target",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"7zrr9gja\",\r\n  \"tableName\": \"tt\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/test/target case002",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"message is FAIL\"] = responseJSON.message == \"FAIL\";\r",
+											"    tests[\"has data\"]=responseJSON.data?true:false;\r",
+											"    tests[\"data is string\"]=typeof(responseJSON.data)==\"string\";\r",
+											"    }\r",
+											"\r",
+											"catch(e){\r",
+											"    \r",
+											"}\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/test/target",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"0pjszq\",\r\n  \"tableName\": \"tt\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/test/target case003",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"message is FAIL\"] = responseJSON.message == \"FAIL\";\r",
+											"    tests[\"has data\"]=responseJSON.data?true:false;\r",
+											"    tests[\"data is string\"]=typeof(responseJSON.data)==\"string\";\r",
+											"    }\r",
+											"\r",
+											"catch(e){\r",
+											"    \r",
+											"}\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/test/target",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"g8k7benb\",\r\n  \"tableName\": \"t_task\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "测试脱敏源，目的源数据库是否能连接",
+					"description": "",
+					"item": [
+						{
+							"name": "/datasource/test_db_connet case001",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"message is SUCCESS\"] = responseJSON.message == \"SUCCESS\";\r",
+											"    \r",
+											"    }\r",
+											"\r",
+											"catch(e){\r",
+											"    \r",
+											"}\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/test_db_connect",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"databaseName\": \"tms\",\r\n  \"dbType\": \"mysql\",\r\n  \"ip\": \"10.0.10.156\",\r\n  \"password\": \"admin\",\r\n  \"port\": 3306,\r\n  \"username\": \"root\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/test_db_connet case002",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"message is FAIL\"] = responseJSON.message == \"FAIL\";\r",
+											"    tests[\"has data\"]=responseJSON.data?true:false;\r",
+											"    tests[\"data is string\"]=typeof(responseJSON.data)==\"string\";\r",
+											"    \r",
+											"    }\r",
+											"\r",
+											"catch(e){\r",
+											"    \r",
+											"}\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/test_db_connect",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"databaseName\": \"tms\",\r\n  \"dbType\": \"mysql\",\r\n  \"ip\": \"10.0.10.156\",\r\n  \"password\": \"admi\",\r\n  \"port\": 3306,\r\n  \"username\": \"root\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/test_db_connet case003",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"message is SUCCESS\"] = responseJSON.message == \"SUCCESS\";\r",
+											"    \r",
+											"    }\r",
+											"\r",
+											"catch(e){\r",
+											"    \r",
+											"}\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/test_db_connect",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"databaseName\": \"xe\",\r\n  \"dbType\": \"oracle\",\r\n  \"ip\": \"10.0.10.175\",\r\n  \"password\": \"oracle2017\",\r\n  \"port\": 49161,\r\n  \"username\": \"system\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/test_db_connet case004",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"message is FAIL\"] = responseJSON.message == \"FAIL\";\r",
+											"    tests[\"has data\"]=responseJSON.data?true:false;\r",
+											"    tests[\"data is string\"]=typeof(responseJSON.data)==\"string\";\r",
+											"    \r",
+											"    }\r",
+											"\r",
+											"catch(e){\r",
+											"    \r",
+											"}\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/test_db_connect",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"databaseName\": \"xe\",\r\n  \"dbType\": \"oracle\",\r\n  \"ip\": \"10.0.10.175\",\r\n  \"password\": \"oracle207\",\r\n  \"port\": 49161,\r\n  \"username\": \"system\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/test_db_connet case005",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"message is SUCCESS\"] = responseJSON.message == \"SUCCESS\";\r",
+											"    \r",
+											"    }\r",
+											"\r",
+											"catch(e){\r",
+											"    \r",
+											"}\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/test_db_connect",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"databaseName\": \"test\",\r\n  \"dbType\": \"postgresql\",\r\n  \"ip\": \"10.0.0.235\",\r\n  \"password\": \"postgres\",\r\n  \"port\": 5432,\r\n  \"username\": \"postgres\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/test_db_connet case006",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"message is FAIL\"] = responseJSON.message == \"FAIL\";\r",
+											"    tests[\"has data\"]=responseJSON.data?true:false;\r",
+											"    tests[\"data is string\"]=typeof(responseJSON.data)==\"string\";\r",
+											"    \r",
+											"    }\r",
+											"\r",
+											"catch(e){\r",
+											"    \r",
+											"}\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/test_db_connect",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"databaseName\": \"test\",\r\n  \"dbType\": \"postgresql\",\r\n  \"ip\": \"10.0.0.235\",\r\n  \"password\": \"postgre\",\r\n  \"port\": 5432,\r\n  \"username\": \"postgres\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/test_db_connet case1",
+							"request": {
+								"url": "{{server_url}}/dms/datasource/test_db_connect",
+								"method": null,
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "根据数据库连接信息获取数据库所有表",
+					"description": "",
+					"item": [
+						{
+							"name": "/datasource/tables case001",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"message is SUCCESS\"] = responseJSON.message == \"SUCCESS\";\r",
+											"    tests[\"data has tables\"]=responseJSON.data.tables?true:false;\r",
+											"\r",
+											"}catch(e){\r",
+											"    \r",
+											"}\r",
+											"\r",
+											"\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/tables",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"databaseName\": \"tms\",\r\n  \"dbType\": \"mysql\",\r\n  \"ip\": \"10.0.10.156\",\r\n  \"password\": \"admin\",\r\n  \"port\": 3306,\r\n  \"username\": \"root\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/tables case002",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"message is FAIL\"] = responseJSON.message ==\"FAIL\";\r",
+											"    tests[\"has data\"]=responseJSON.data?true:false;\r",
+											"    tests[\"data is string\"] = typeof(responseJSON.message) ==\"string\";\r",
+											"\r",
+											"}catch(e){\r",
+											"    \r",
+											"}\r",
+											"\r",
+											"\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/tables",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"databaseName\": \"tms\",\r\n  \"dbType\": \"mysql\",\r\n  \"ip\": \"10.0.10.156\",\r\n  \"password\": \"admi\",\r\n  \"port\": 3306,\r\n  \"username\": \"root\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/tables case003",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"message is FAIL\"] = responseJSON.message ==\"FAIL\";\r",
+											"    tests[\"has data\"]=responseJSON.data?true:false;\r",
+											"    tests[\"data is string\"] = typeof(responseJSON.message) ==\"string\";\r",
+											"\r",
+											"}catch(e){\r",
+											"    \r",
+											"}\r",
+											"\r",
+											"\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/tables",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"databaseName\": \"xe\",\r\n  \"dbType\": \"oracle\",\r\n  \"ip\": \"10.0.10.175\",\r\n  \"password\": \"oracle2017\",\r\n  \"port\": 49161,\r\n  \"username\": \"syste\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/tables case004",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"message is SUCCESS\"] = responseJSON.message == \"SUCCESS\";\r",
+											"    tests[\"data has tables\"]=responseJSON.data.tables?true:false;\r",
+											"\r",
+											"}catch(e){\r",
+											"    \r",
+											"}\r",
+											"\r",
+											"\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/tables",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"databaseName\": \"xe\",\r\n  \"dbType\": \"oracle\",\r\n  \"ip\": \"10.0.10.175\",\r\n  \"password\": \"oracle2017\",\r\n  \"port\": 49161,\r\n  \"username\": \"system\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/tables case005",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"message is SUCCESS\"] = responseJSON.message == \"SUCCESS\";\r",
+											"    tests[\"data has tables\"]=responseJSON.data.tables?true:false;\r",
+											"\r",
+											"}catch(e){\r",
+											"    \r",
+											"}\r",
+											"\r",
+											"\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/tables",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"databaseName\": \"test\",\r\n  \"dbType\": \"postgresql\",\r\n  \"ip\": \"10.0.0.235\",\r\n  \"password\": \"postgres\",\r\n  \"port\": 5432,\r\n  \"username\": \"postgres\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/tables case006",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"message is FAIL\"] = responseJSON.message ==\"FAIL\";\r",
+											"    tests[\"has data\"]=responseJSON.data?true:false;\r",
+											"    tests[\"data is string\"] = typeof(responseJSON.message) ==\"string\";\r",
+											"\r",
+											"}catch(e){\r",
+											"    \r",
+											"}\r",
+											"\r",
+											"\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/tables",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"databaseName\": \"test\",\r\n  \"dbType\": \"postgresql\",\r\n  \"ip\": \"10.0.0.235\",\r\n  \"password\": \"postgrs\",\r\n  \"port\": 5432,\r\n  \"username\": \"postgres\"\r\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "删除源",
+					"description": "",
+					"item": [
+						{
+							"name": "/datasource/delete/1 case001",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"message is SUCCESS\"] = responseJSON.message == \"SUCCESS\";\r",
+											"    \r",
+											"    }\r",
+											"\r",
+											"catch(e){\r",
+											"    \r",
+											"}\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/{{import_resourceId}}",
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/delete/1 case002",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"message is FAIL\"] = responseJSON.message == \"FAIL\";\r",
+											"    tests[\"has error\"]=responseJSON.error?true:false;\r",
+											"    tests[\"error is string\"]=typeof(responseJSON.error)==\"string\";\r",
+											"    \r",
+											"    }\r",
+											"\r",
+											"catch(e){\r",
+											"    \r",
+											"}\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": "{{server_url}}/dms/datasource/{{import_resourceId}}",
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "获取所有脱敏源或者目标源",
+					"description": "",
+					"item": [
+						{
+							"name": "/datasource?page=1&size=30 case001",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"message is SUCCESS\"] = responseJSON.message == \"SUCCESS\";\r",
+											"    tests[\"has data\"] = responseJSON.data?true:false ;\r",
+											"    tests[\"data has content\"]=responseJSON.data.content?true:false;\r",
+											"   \r",
+											"   rule=responseJSON.data.content;\r",
+											"\r",
+											"      tests[\"rule has databaseName\"]=rule[0].databaseName?true:false;\r",
+											"      tests[\"rule has id\"]=rule[0].id?true:false;\r",
+											"      tests[\"rule has ip\"]=rule[0].ip?true:false;\r",
+											"      tests[\"rule has comment\"]=rule[0].comment?true:false;\r",
+											"      tests[\"rule is 30\"]=rule.length<=30;\r",
+											" \r",
+											"   \r",
+											"    \r",
+											"\r",
+											"}catch(e){\r",
+											"    \r",
+											"}\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": {
+									"raw": "{{server_url}}/dms/datasource?page=1&size=30",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"dms",
+										"datasource"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"equals": true,
+											"description": ""
+										},
+										{
+											"key": "size",
+											"value": "30",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "page",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "size",
+										"value": "10",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "property",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "direction",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "genre",
+										"value": "0",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "query",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "dto",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource?page=1&size=0 case002",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 400\"] = responseCode.code === 400;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"has error\"] = responseJSON.error?true:false ;\r",
+											"    tests[\"errors has defaultMessage\"]=responseJSON.errors[0].defaultMessage?true:false;\r",
+											" \r",
+											"}catch(e){\r",
+											"    \r",
+											"}\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": {
+									"raw": "{{server_url}}/dms/datasource?page=1&size=0",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"dms",
+										"datasource"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"equals": true,
+											"description": ""
+										},
+										{
+											"key": "size",
+											"value": "0",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "page",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "size",
+										"value": "10",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "property",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "direction",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "genre",
+										"value": "0",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "query",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "dto",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource?page=1&size=999 case003",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 400\"] = responseCode.code === 400;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"has error\"] = responseJSON.error?true:false ;\r",
+											"    tests[\"errors has defaultMessage\"]=responseJSON.errors[0].defaultMessage?true:false;\r",
+											" \r",
+											"}catch(e){\r",
+											"    \r",
+											"}\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": {
+									"raw": "{{server_url}}/dms/datasource?page=1&size=999",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"dms",
+										"datasource"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"equals": true,
+											"description": ""
+										},
+										{
+											"key": "size",
+											"value": "999",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "page",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "size",
+										"value": "10",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "property",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "direction",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "genre",
+										"value": "0",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "query",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "dto",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource?page=-1&size=10 case004",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 400\"] = responseCode.code === 400;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"has error\"] = responseJSON.error?true:false ;\r",
+											"    tests[\"errors has defaultMessage\"]=responseJSON.errors[0].defaultMessage?true:false;\r",
+											" \r",
+											"}catch(e){\r",
+											"    \r",
+											"}\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": {
+									"raw": "{{server_url}}/dms/datasource?page=-1&size=10",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"dms",
+										"datasource"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "-1",
+											"equals": true,
+											"description": ""
+										},
+										{
+											"key": "size",
+											"value": "10",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "page",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "size",
+										"value": "10",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "property",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "direction",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "genre",
+										"value": "0",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "query",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "dto",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource?page=1&size=-1 case005",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 400\"] = responseCode.code === 400;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"has error\"] = responseJSON.error?true:false ;\r",
+											"    tests[\"errors has defaultMessage\"]=responseJSON.errors[0].defaultMessage?true:false;\r",
+											" \r",
+											"}catch(e){\r",
+											"    \r",
+											"}\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": {
+									"raw": "{{server_url}}/dms/datasource?page=1&size=-1",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"dms",
+										"datasource"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"equals": true,
+											"description": ""
+										},
+										{
+											"key": "size",
+											"value": "-1",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "page",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "size",
+										"value": "10",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "property",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "direction",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "genre",
+										"value": "0",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "query",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									},
+									{
+										"key": "dto",
+										"value": "1",
+										"description": "",
+										"disabled": true
+									}
+								],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "根据源id获取数据库所有表",
+					"description": "",
+					"item": [
+						{
+							"name": "/datasource/tables/g8k7benb?page=1&size=10 case001",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"message is SUCCESS\"] = responseJSON.message == \"SUCCESS\";\r",
+											"    tests[\"has data\"] = responseJSON.data?true:false ;\r",
+											"    \r",
+											"    rule=responseJSON.data;\r",
+											"     tests[\"rule has content\"]=rule.content?true:false;\r",
+											"     tests[\"tableName<=10\"]=rule.content.length<=10;\r",
+											"    \r",
+											"    }\r",
+											"\r",
+											"catch(e){\r",
+											"    \r",
+											"}\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": {
+									"raw": "{{server_url}}/dms/datasource/tables/{{import_resourceId_table}}?page=1&size=10",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"dms",
+										"datasource",
+										"tables",
+										"{{import_resourceId_table}}"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"equals": true,
+											"description": ""
+										},
+										{
+											"key": "size",
+											"value": "10",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/tables/g8k7be?page=1&size=10 case002",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"message is FAIL\"] = responseJSON.message == \"FAIL\";\r",
+											"    tests[\"has error\"] = responseJSON.error?true:false ;\r",
+											"    tests[\"error is string\"]=typeof(responseJSON.error)==\"string\";\r",
+											"    \r",
+											"    }\r",
+											"\r",
+											"catch(e){\r",
+											"    \r",
+											"}\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": {
+									"raw": "{{server_url}}/dms/datasource/tables/g8k7be?page=1&size=10",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"dms",
+										"datasource",
+										"tables",
+										"g8k7be"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"equals": true,
+											"description": ""
+										},
+										{
+											"key": "size",
+											"value": "10",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "/datasource/tables/numdvjmh?page=1&size=20 case003",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+											"\r",
+											"var responseJSON;\r",
+											"try{\r",
+											"    responseJSON = JSON.parse(responseBody);\r",
+											"    tests[\"message is SUCCESS\"] = responseJSON.message == \"SUCCESS\";\r",
+											"    tests[\"has data\"] = responseJSON.data?true:false ;\r",
+											"    \r",
+											"    rule=responseJSON.data;\r",
+											"     tests[\"rule has content\"]=rule.content?true:false;\r",
+											"     tests[\"tableName<=20\"]=rule.content.length<=20;\r",
+											"    \r",
+											"    }\r",
+											"\r",
+											"catch(e){\r",
+											"    \r",
+											"}\r",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"url": {
+									"raw": "{{server_url}}/dms/datasource/tables/{{import_resourceId_table}}?page=1&size=20",
+									"host": [
+										"{{server_url}}"
+									],
+									"path": [
+										"dms",
+										"datasource",
+										"tables",
+										"{{import_resourceId_table}}"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"equals": true,
+											"description": ""
+										},
+										{
+											"key": "size",
+											"value": "20",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	]
+}

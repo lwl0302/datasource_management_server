@@ -1,0 +1,105 @@
+{
+  "id": "9702e4f0-9b58-74f5-848e-a5a7aa124641",
+  "name": "Postman Globals",
+  "values": [
+    {
+      "key": "server_url",
+      "value": "http://10.0.0.196:50000",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "rule_uuid_del",
+      "value": "myp0vyof",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "rule_uuid_modi",
+      "value": "xldesdr6",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "task_uuid",
+      "value": "dbx3b2gg",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "task_uuid_error1",
+      "value": "ktjgsdvk",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "task_uuid_error2",
+      "value": "8ovqx4bx",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "import_resourceId",
+      "value": "3guwnb0k",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "import_resourceId_table",
+      "value": "ot2kmfod",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "rule_mode",
+      "value": "g5rty6fe",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "variable_key",
+      "value": "variable_value",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "modes_tests",
+      "value": "[\"g5rty6fe\",\"h4j1nd6v\",\"03zgh1d7\",\"ugge3eyf\",\"uot5qukm\",\"yxtcrufg\",\"09xoibiv\",\"30ku3vgx\",\"rwsq55rb\"]",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "modes_tests2",
+      "value": "[\"g5rty6fe\",\"g5rty6fe\",\"h4j1nd6v\",\"h4j1nd6v\",\"03zgh1d7\",\"03zgh1d7\",\"ugge3eyf\",\"ugge3eyf\",\"uot5qukm\",\"uot5qukm\",\"yxtcrufg\",\"yxtcrufg\",\"09xoibiv\",\"09xoibiv\",\"30ku3vgx\",\"30ku3vgx\",\"rwsq55rb\",\"rwsq55rb\"]",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "random",
+      "value": "74986",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "random1",
+      "value": "\"*%((&&*!%@地方很近的分手过后就打算出家出价多少吧撒还记得发货速度回家覅u了我v管理会计的时间和腐蚀恐惧不v空间还是百度空间发v不\"",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "modes_tests3",
+      "value": "[\"g5rty6fe\",\"h4j1nd6v\",\"03zgh1d7\",\"ugge3eyf\",\"uot5qukm\",\"yxtcrufg\",\"09xoibiv\",\"30ku3vgx\",\"rwsq55rb\",\"gyfdg\"]",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "modes_tests4",
+      "value": "[\"g5rty6fe\",\"h4j1nd6v\",\"03zgh1d7\",\"ugge3eyf\",\"uot5qukm\",\"yxtcrufg\",\"09xoibiv\",\"30ku3vgx\"]",
+      "enabled": true,
+      "type": "text"
+    }
+  ],
+  "_postman_variable_scope": "globals",
+  "_postman_exported_at": "2017-08-07T08:10:32.622Z",
+  "_postman_exported_using": "Postman/5.1.3"
+}

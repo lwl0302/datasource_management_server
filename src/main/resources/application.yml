@@ -1,0 +1,45 @@
+server:
+  port: 50003
+spring:
+  application:
+    name: datasource-management-server
+  datasource:
+      driver-class-name: org.gjt.mm.mysql.Driver
+      url: jdbc:mysql://192.168.125.3:3306/dms?autoReconnect=true&useUnicode=true&createDatabaseIfNotExist=true&characterEncoding=utf8&useSSL=true&serverTimezone=CTT
+      username: root
+      password: root20180315
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL5Dialect
+  http:
+    multipart:
+      maxFileSize: 1536Mb
+      maxRequestSize: 1536Mb
+eureka:
+  client:
+    healthcheck:
+          enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+      prefer-ip-address: true
+
+extract:
+  database:
+    ip: 192.168.125.3
+    port: 3306
+    name: extract
+    username: root
+    password: root20180315
+    type: Mysql
+
+logging:
+  path: ./logs
+  level: debug
+
+file:
+  path:
+    upload: /opt/upload/
+    desens: /opt/desense/
